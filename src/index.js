@@ -54,6 +54,14 @@ form.addEventListener("submit", handleSubmit);
  */
 
 // Code here
+const localTime = new Date().toLocaleDateString();
+const handleMessagesClick = function(event) {
+  alert(time);
+}
+let messages = document.getElementsByClassName("messages");
+for (var message of messages) {
+  message.addEventListener("click", handleMessagesClick);
+}
 
 /**
  * Listen to every keypress (from the keyboard) in the input and call
