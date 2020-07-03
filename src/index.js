@@ -28,24 +28,22 @@ addMessage("Let's go!");
  * with addMessage()
  */
 
-// Code here
-// 1. I need to get the item to listen to
+// Get the form element from the document
 const formCollection = document.getElementsByTagName("form");
 const form = formCollection[0];
 
-// 2. I need to bind the submit listener to that item
-// 3. I need to add a message everytime this listener is called
-// 4. I need to make an input text to the add message
+// Get the value of the input text
+const inputText = document.getElementById("text-input").value;
+
+// Create a function to add messages to the screen
 let handleSubmit = function(event) {
   event.preventDefault();
-  const inputElement = document.getElementById("form-input");
-  const inputValue = inputElement.value;
-  addMessage(inputValue, true);
-  inputValue = "";
+  addMessage(inputText, true);
+  inputText = "";
 };
 
+// Listen to submit event listener
 form.addEventListener("submit", handleSubmit);
-
 
 /**
  * Listen to the click on each message and create an alert
@@ -53,12 +51,18 @@ form.addEventListener("submit", handleSubmit);
  * https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
  */
 
-// Code here
+// Create variable for local time
 const localTime = new Date().toLocaleDateString();
-const handleMessagesClick = function(event) {
+
+// Create function to handle alerting the local time
+const handleMessagesClick = function (event) {
   alert(time);
-}
+};
+
+// Get the messages and assign them to the variable the value of which is going to be an array
 let messages = document.getElementsByClassName("messages");
+
+// Use for of loop to iterate through all the messages and bind click event listener to each of them
 for (var message of messages) {
   message.addEventListener("click", handleMessagesClick);
 }
@@ -68,4 +72,11 @@ for (var message of messages) {
  * the function typing()
  */
 
-// Code here
+ // Create a function to handle keydown event  
+
+const handleKeyPress = function (event) {
+  typing();
+};
+
+// Listen to keydown event listener
+inputText.addEventListener("keydown", handleKeyPress);
