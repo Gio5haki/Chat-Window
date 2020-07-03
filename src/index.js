@@ -36,7 +36,7 @@ const form = formCollection[0];
 const inputText = document.getElementById("text-input").value;
 
 // Create a function to add messages to the screen
-let handleSubmit = function(event) {
+let handleSubmit = function (event) {
   event.preventDefault();
   addMessage(inputText, true);
   inputText = "";
@@ -72,7 +72,7 @@ for (var message of messages) {
  * the function typing()
  */
 
-// Create a function to handle keydown event  
+// Create a function to handle keydown event
 const handleKeyPress = function (event) {
   typing();
 };
