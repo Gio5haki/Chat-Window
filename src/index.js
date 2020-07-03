@@ -29,6 +29,23 @@ addMessage("Let's go!");
  */
 
 // Code here
+// 1. I need to get the item to listen to
+const formCollection = document.getElementsByTagName("form");
+const form = formCollection[0];
+
+// 2. I need to bind the submit listener to that item
+// 3. I need to add a message everytime this listener is called
+// 4. I need to make an input text to the add message
+let handleSubmit = function(event) {
+  event.preventDefault();
+  const inputElement = document.getElementById("form-input");
+  const inputValue = inputElement.value;
+  addMessage(inputValue, true);
+  inputValue = "";
+};
+
+form.addEventListener("submit", handleSubmit);
+
 
 /**
  * Listen to the click on each message and create an alert
