@@ -73,9 +73,9 @@ for (var message of messages) {
  */
 
 // Create a function to handle keydown event
-const handleKeyPress = function (event) {
+const handleKeyDown = function (event) {
   typing();
 };
 
 // Listen to keydown event listener
-inputText.addEventListener("keydown", handleKeyPress);
+inputText.addEventListener("keydown", handleKeyDown);
