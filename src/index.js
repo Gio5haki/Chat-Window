@@ -72,8 +72,7 @@ for (var message of messages) {
  * the function typing()
  */
 
- // Create a function to handle keydown event  
-
+// Create a function to handle keydown event  
 const handleKeyPress = function (event) {
   typing();
 };
